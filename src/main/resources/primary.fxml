@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="vue.PrimaryController"
+            prefWidth="900" prefHeight="650"
+            style="-fx-background-color: #f5f5f5;">
+
+    <!-- TITRE -->
+    <Label text="Galerie d'Art"
+           AnchorPane.topAnchor="15" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+           alignment="CENTER"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #8B0000;" />
+
+    <!-- FORMULAIRE -->
+    <VBox spacing="8"
+          AnchorPane.topAnchor="60" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Titre :" prefWidth="80"/>
+            <TextField fx:id="txtTitre" prefWidth="200" promptText="Titre de l'oeuvre"/>
+            <Label text="Artiste :" prefWidth="70"/>
+            <TextField fx:id="txtArtiste" prefWidth="200" promptText="Nom de l'artiste"/>
+            <Label text="Genre :" prefWidth="60"/>
+            <TextField fx:id="txtGenre" prefWidth="150" promptText="Peinture, Sculpture..."/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Prix (€) :" prefWidth="80"/>
+            <TextField fx:id="txtPrix" prefWidth="120" promptText="0.00"/>
+            <Label text="Quantité :" prefWidth="70"/>
+            <TextField fx:id="txtQuantite" prefWidth="80" promptText="0"/>
+            <Label text="Disponible :" prefWidth="80"/>
+            <CheckBox fx:id="chkDisponible" selected="true"/>
+
+            <!-- BOUTONS -->
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Button fx:id="btnAjouter" text="➕ Ajouter"
+                        onAction="#handleAjouter"
+                        style="-fx-background-color: #2e7d32; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 6 14;"/>
+                <Button fx:id="btnModifier" text="✏️ Modifier"
+                        onAction="#handleModifier"
+                        style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 6 14;"/>
+                <Button fx:id="btnSupprimer" text="🗑 Supprimer"
+                        onAction="#handleSupprimer"
+                        style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 6 14;"/>
+                <Button fx:id="btnVider" text="🔄 Vider"
+                        onAction="#handleVider"
+                        style="-fx-background-color: #757575; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 6 14;"/>
+            </HBox>
+        </HBox>
+
+        <!-- BARRE DE RECHERCHE (bonus) -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="🔍 Recherche :" prefWidth="100"/>
+            <TextField fx:id="txtRecherche" prefWidth="300"
+                       promptText="Filtrer par titre ou genre..."
+                       onKeyReleased="#handleRecherche"/>
+        </HBox>
+
+        <!-- TABLEAU -->
+        <TableView fx:id="tableOeuvres" prefHeight="400"
+                   onMouseClicked="#handleTableSelection"
+                   style="-fx-border-color: #cccccc;">
+            <columns>
+                <TableColumn fx:id="colId"         text="ID"         prefWidth="50"/>
+                <TableColumn fx:id="colTitre"      text="Titre"      prefWidth="180"/>
+                <TableColumn fx:id="colArtiste"    text="Artiste"    prefWidth="150"/>
+                <TableColumn fx:id="colGenre"      text="Genre"      prefWidth="120"/>
+                <TableColumn fx:id="colPrix"       text="Prix (€)"   prefWidth="90"/>
+                <TableColumn fx:id="colQuantite"   text="Quantité"   prefWidth="80"/>
+                <TableColumn fx:id="colDisponible" text="Disponible" prefWidth="90"/>
+            </columns>
+        </TableView>
+
+    </VBox>
+</AnchorPane>

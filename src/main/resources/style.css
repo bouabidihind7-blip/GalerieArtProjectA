@@ -1,0 +1,68 @@
+/* style.css - Thème Chic Pink & Beige */
+
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #FAF7F2; /* Fond Beige Crème très clair */
+    -fx-padding: 20px;
+}
+
+/* --- TOUS LES TITRES ET LABELS EN PINK --- */
+.label {
+    -fx-text-fill: #D67A6B; /* Un rose terre d'ombre doux et élégant */
+    -fx-font-weight: bold;
+}
+
+/* Titre Principal "Galerie d'Art" */
+#mainTitle {
+    -fx-text-fill: #E8A598; /* Rose poudré éclatant */
+    -fx-font-size: 32px;
+}
+
+/* Titre de la barre latérale "ŒUVRE D'ART" */
+#lblSideTitre {
+    -fx-text-fill: #E8A598;
+    -fx-font-size: 18px;
+    -fx-border-color: transparent transparent #F0E2D0 transparent;
+    -fx-border-width: 2px;
+}
+
+/* --- CHAMPS DE SAISIE --- */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10px;
+    -fx-border-color: #F0E2D0; /* Bordure beige */
+    -fx-border-radius: 10px;
+    -fx-padding: 8px;
+}
+.text-field:focused {
+    -fx-border-color: #E8A598; /* Rose lors de la saisie */
+}
+
+/* --- BOUTONS STYLE "PILULE" --- */
+.button {
+    -fx-background-radius: 25px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+#btnAjouter { -fx-background-color: #E8A598; }   /* Rose Principal */
+#btnModifier { -fx-background-color: #D4A373; }  /* Beige Doré */
+#btnSupprimer { -fx-background-color: #DE9E95; } /* Vieux Rose */
+#btnVider { -fx-background-color: #BCA39A; }     /* Taupe Rosé */
+
+/* --- TABLEAU --- */
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-border-color: #F0E2D0;
+}
+.table-view .column-header-background {
+    -fx-background-color: #FDFBF9; /* Entête presque blanc */
+}
+.table-view .column-header .label {
+    -fx-text-fill: #D67A6B; /* Titres colonnes en Rose */
+}
+.table-row-cell:selected {
+    -fx-background-color: #F5E6E3; /* Sélection Rose très clair */
+}
